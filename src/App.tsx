@@ -7,7 +7,7 @@ function App() {
           <img
             src="/images/bajaj_logo.webp"
             alt="Bajaj Logo"
-            className="w-[640px] max-w-[98vw] h-auto mb-12 drop-shadow-2xl mx-auto pr-8"
+            className="w-[640px] max-w-[98vw] h-auto mb-12 drop-shadow-2xl mx-auto pr-3"
             style={{ objectFit: 'contain', display: 'block' }}
           />
           <p className="font-montserrat font-normal text-3xl md:text-5xl tracking-wide text-center mt-2 md:mt-6">
