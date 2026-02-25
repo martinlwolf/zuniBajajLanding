@@ -1,22 +1,80 @@
+import { Routes, Route } from 'react-router-dom'
+import Navbar from './shared/Navbar'
+import HomePage from './features/home/HomePage'
+import MotoModeloPage from './features/motos/MotoModeloPage'
+import { getMotoDataByKey } from './features/motos/motoData'
+import MotoLineupPage from './features/motos/MotoLineupPage'
+import { dominarLineup, pulsarNsLineup, streetLineup } from './features/motos/motoLineupData'
+import AboutPage from './features/about/AboutPage'
+import FloatingWhatsApp from './shared/FloatingWhatsApp'
+import ServicePage from './features/service/ServicePage'
 
 function App() {
   return (
-    <div className="min-h-screen w-full bg-[#1a1a1a] text-white flex items-center justify-center">
-      <div className="flex flex-col items-center justify-center w-full h-full">
-        <div className="flex flex-col items-center justify-center">
-          <img
-            src="/images/bajaj_logo.webp"
-            alt="Bajaj Logo"
-            className="w-[640px] max-w-[98vw] h-auto mb-12 drop-shadow-2xl mx-auto pr-3"
-            style={{ objectFit: 'contain', display: 'block' }}
+    <>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+
+        {/* DOMINAR */}
+        <Route path="/dominar" element={<MotoLineupPage data={dominarLineup} />} />
+        <Route
+          path="/dominar/d250"
+          element={<MotoModeloPage data={getMotoDataByKey('dominar-d250')} />}
+        />
+        <Route path="/dominar/400" element={
+          <MotoModeloPage
+            data={getMotoDataByKey('dominar-d400-ug')}
           />
-          <p className="font-montserrat font-normal text-3xl md:text-5xl tracking-wide text-center mt-2 md:mt-6">
-            Próximamente
-          </p>
-        </div>
-      </div>
-    </div>
-  );
+        } />
+
+        {/* PULSAR NS */}
+        <Route path="/pulsar-ns" element={<MotoLineupPage data={pulsarNsLineup} />} />
+        <Route
+          path="/pulsar-ns/ns-125"
+          element={<MotoModeloPage data={getMotoDataByKey('rouser-ns-125')} />}
+        />
+        <Route
+          path="/pulsar-ns/ns-160"
+          element={<MotoModeloPage data={getMotoDataByKey('rouser-ns-160')} />}
+        />
+        <Route
+          path="/pulsar-ns/ns-200"
+          element={<MotoModeloPage data={getMotoDataByKey('rouser-ns-200')} />}
+        />
+        <Route
+          path="/pulsar-ns/n-250"
+          element={<MotoModeloPage data={getMotoDataByKey('rouser-n250')} />}
+        />
+        <Route
+          path="/pulsar-ns/ns-400"
+          element={<MotoModeloPage data={getMotoDataByKey('rouser-ns-400')} />}
+        />
+
+        {/* STREET */}
+        <Route path="/street" element={<MotoLineupPage data={streetLineup} />} />
+        <Route
+          path="/street/p150"
+          element={<MotoModeloPage data={getMotoDataByKey('rouser-p150')} />}
+        />
+        <Route
+          path="/street/boxer-150"
+          element={<MotoModeloPage data={getMotoDataByKey('boxer-150-at')} />}
+        />
+        <Route
+          path="/street/boxer-ct-100"
+          element={<MotoModeloPage data={getMotoDataByKey('boxer-ct-100')} />}
+        />
+
+        {/* Otras secciones */}
+        <Route path="/nosotros" element={<AboutPage />} />
+        <Route path="/financiacion" element={<></>} />
+        <Route path="/service-oficial" element={<ServicePage />} />
+        <Route path="/contacto" element={<></>} />
+      </Routes>
+      <FloatingWhatsApp />
+    </>
+  )
 }
 
 export default App

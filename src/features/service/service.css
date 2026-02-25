@@ -1,0 +1,7 @@
+// Tailwind extra styles for ServicePage
+/* input styles moved inline */
+
+html, body, #root {
+  height: 100vh;
+  overflow: hidden;
+}
