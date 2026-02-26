@@ -2,10 +2,10 @@ import React, { useState, useEffect } from 'react';
 
 const serviceImages = [
   '/images/service/Bajaj-Argentina-iniciativa-service-gratis-portada.webp',
-  '/images/service/Bajaj-Argentina-iniciativa-service-gratis.jpg',
-  '/images/service/Bajaj-Argentina-iniciativa-service.jpg',
-  '/images/service/servicio-tecnico-bajaj-barcelona-3.jpg',
-  '/images/service/WhatsApp-Image-2022-03-28-at-10.52.10-AM-5.jpeg',
+  '/images/service/Bajaj-Argentina-iniciativa-service-gratis.webp',
+  '/images/service/Bajaj-Argentina-iniciativa-service.webp',
+  '/images/service/servicio-tecnico-bajaj-barcelona-3.webp',
+  '/images/service/WhatsApp-Image-2022-03-28-at-10.52.10-AM-5.webp',
 ];
 
 const ServiceSlideshow: React.FC = () => {

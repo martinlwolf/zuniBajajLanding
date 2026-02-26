@@ -62,6 +62,13 @@ const Navbar = () => {
           </Link>
 
           <Link
+            to="/eventos"
+            className={`${navLinkClass} text-center leading-tight`}
+          >
+            EVENTOS
+          </Link>
+
+          <Link
             to="/nosotros"
             className={`${navLinkClass} text-center`}
           >

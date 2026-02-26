@@ -2,22 +2,24 @@ import HeroSlider, { type HeroSlide } from './HeroSlider'
 import { postContacto } from '../../services/service'
 import { useState } from 'react'
 
-const slides: HeroSlide[] = [
+const slides = [
   {
-    title: 'Domina la ciudad con Bajaj',
-    description: 'Modelos potentes, eficientes y listos para el día a día.',
-    image: '/images/hero-1.webp',
-    badge: 'BAJAJ ARGENTINA',
+    title: '',
+    description: '',
+    image: '/images/home/MOTOZUNI - ENLACE POST.webp',
     link: '#',
-    primaryLabel: 'Ver modelos',
   },
   {
-    title: 'Financiación a tu medida',
-    description: 'Consultá por planes de pago y cuotas accesibles.',
-    image: '/images/hero-2.webp',
-    badge: 'CRÉDITO EXCLUSIVO',
+    title: '',
+    description: '',
+    image: '/images/home/MOTOZUNI - ENLACE POST (1).webp',
     link: '#',
-    primaryLabel: 'Simular crédito',
+  },
+  {
+    title: '',
+    description: '',
+    image: '/images/home/MOTOZUNI - ENLACE POST (2).webp',
+    link: '#',
   },
 ]
 

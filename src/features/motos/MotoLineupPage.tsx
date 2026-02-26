@@ -17,7 +17,7 @@ const MotoLineupPage = ({ data }: MotoLineupPageProps) => {
   return (
     <main className="relative h-screen w-full overflow-hidden bg-black">
       <video
-        className="absolute inset-0 h-full w-full object-cover"
+        className="absolute inset-0 h-full w-full object-cover object-center scale-[1.25] md:scale-[1.15] transition-transform duration-300"
         src={data.videoSrc}
         autoPlay
         muted
