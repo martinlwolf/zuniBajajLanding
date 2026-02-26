@@ -1,4 +1,4 @@
-import HeroSlider, { type HeroSlide } from './HeroSlider'
+import HeroSlider from './HeroSlider'
 import { postContacto } from '../../services/service'
 import { useState } from 'react'
 

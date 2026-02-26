@@ -7,7 +7,6 @@ const images = [
   '/images/events/Image 2 - Bajaj Auto Drives Sustainable Transportation Solutions At IBET Expo 2024.webp',
 ];
 
-const FADE_DURATION = 1000; // ms
 const SLIDE_DURATION = 6000; // ms
 
 
