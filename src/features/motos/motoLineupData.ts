@@ -45,8 +45,8 @@ export const streetLineup: MotoLineupData = {
   subtitle: 'Elegí tu modelo',
   videoSrc: '/videos/street_video.webm',
   models: [
+    { label: buildMotoFullName('boxer-ct-100'), to: '/street/boxer-ct-100' },
     { label: buildMotoFullName('rouser-p150'), to: '/street/p150' },
     { label: buildMotoFullName('boxer-150-at'), to: '/street/boxer-150' },
-    { label: buildMotoFullName('boxer-ct-100'), to: '/street/boxer-ct-100' },
   ],
 }

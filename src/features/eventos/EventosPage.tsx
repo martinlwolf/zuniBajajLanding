@@ -17,6 +17,12 @@ const EventosPage: React.FC = () => {
           <p className="text-white text-lg xs:text-xl sm:text-2xl md:text-2xl font-semibold mt-2 drop-shadow-lg text-center md:text-left">
             Participá en nuestros eventos exclusivos.<br />Dejanos tus datos para recibir información.
           </p>
+          <div className="flex flex-row flex-wrap gap-4 justify-center md:justify-start mt-6">
+            <img src="/images/events/events_mini/bajaj-service-camp-04.webp" alt="Evento Bajaj 1" className="w-48 h-28 md:w-56 md:h-32 object-cover rounded-lg shadow-lg" />
+            <img src="/images/events/events_mini/bajaj-verano-2025-2.webp" alt="Evento Bajaj 2" className="w-48 h-28 md:w-56 md:h-32 object-cover rounded-lg shadow-lg" />
+            <img src="/images/events/events_mini/bajaj-verano-2025.webp" alt="Evento Bajaj 3" className="w-48 h-28 md:w-56 md:h-32 object-cover rounded-lg shadow-lg" />
+            <img src="/images/events/events_mini/images.webp" alt="Evento Bajaj 4" className="w-48 h-28 md:w-56 md:h-32 object-cover rounded-lg shadow-lg" />
+          </div>
         </div>
         {/* Abajo en mobile: Formulario grande */}
         <div className="flex flex-col justify-center items-center md:items-end w-full max-w-[90vw] xs:max-w-[320px] sm:max-w-[360px] md:max-w-[600px]">

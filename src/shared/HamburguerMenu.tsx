@@ -96,7 +96,7 @@ const HamburguerMenu = () => {
             {/* CONTACTO destacado */}
             <button
               type="button"
-              onClick={() => handleNavigate('/contacto')}
+              onClick={() => handleNavigate('/#contacto')}
               className="m-4 mt-3 bg-white text-[#005ec2] px-4 py-3 text-base font-bold uppercase shadow-md hover:shadow-lg hover:bg-gray-100 transition-colors w-auto text-center"
             >
               CONTACTO

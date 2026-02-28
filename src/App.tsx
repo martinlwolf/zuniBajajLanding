@@ -9,6 +9,7 @@ import AboutPage from './features/about/AboutPage'
 import FloatingWhatsApp from './shared/FloatingWhatsApp'
 import ServicePage from './features/service/ServicePage'
 import EventosPage from './features/eventos/EventosPage'
+import FinanciacionPage from './features/service/FinanciacionPage'
 
 function App() {
   return (
@@ -69,7 +70,7 @@ function App() {
 
         {/* Otras secciones */}
         <Route path="/nosotros" element={<AboutPage />} />
-        <Route path="/financiacion" element={<></>} />
+        <Route path="/financiacion" element={<FinanciacionPage />} />
         <Route path="/service-oficial" element={<ServicePage />} />
         <Route path="/eventos" element={<EventosPage />} />
         <Route path="/contacto" element={<></>} />

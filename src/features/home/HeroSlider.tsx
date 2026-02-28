@@ -12,7 +12,8 @@ import { cn } from '../../lib/utils'
 export type HeroSlide = {
   title: string
   description: string
-  image: string
+  imageDesktop: string
+  imageMobile: string
   link: string
 }
 
@@ -39,7 +40,6 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({
     emblaApi.on('select', onSelect)
     emblaApi.on('reInit', onSelect)
     
-    // Autoplay nativo simple
     const interval = setInterval(() => {
       emblaApi.scrollNext()
     }, autoplayDelay)
@@ -61,35 +61,44 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({
         <CarouselContent className="-ml-0">
           {slides.map((slide, idx) => (
             <CarouselItem key={idx} className="pl-0">
-              {/* Ajuste de altura: 
-                  - Mobile: h-[60vh] para que no ocupe todo y se vea contenido abajo.
-                  - Desktop: calc(100vh - 80px) asumiendo que tu navbar mide 80px.
+              {/* Contenedor flexible: la imagen es fluida (w-full h-auto) para mantener la relación de aspecto
+                  y reducir la altura al achicar la pantalla evitando el recorte lateral. Se limita la altura
+                  máxima en desktop con `md:max-h-...` para no exceder tamaños grandes.
               */}
-              <div className="relative w-full h-[60vh] md:h-[calc(100vh-100px)] lg:h-[calc(100vh-180px)] transition-all duration-500">
+              <div className="relative w-full transition-all duration-500 bg-gray-100 md:max-h-[600px] lg:max-h-[700px]">
+                {/* Desktop image (shown on md and up) - fluid */}
                 <img
-                  src={slide.image}
+                  src={slide.imageDesktop}
                   alt={slide.title}
                   loading="eager"
-                  className="absolute inset-0 w-full h-full object-cover object-center"
+                  className="hidden md:block w-full h-auto object-center"
                 />
-                {/* Overlay sutil para legibilidad si agregas texto luego */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+                {/* Mobile image (shown on small screens) - fluid */}
+                <img
+                  src={slide.imageMobile}
+                  alt={slide.title}
+                  loading="eager"
+                  className="block md:hidden w-full h-auto object-center"
+                />
+
+                {/* Overlay para suavizar la transición y mejorar contraste */}
+                <div className="absolute inset-0 pointer-events-none bg-gradient-to-t from-black/60 via-transparent to-transparent" />
               </div>
             </CarouselItem>
           ))}
         </CarouselContent>
 
-        {/* Indicadores: Líneas Rectas Modernas */}
-        <div className="absolute bottom-8 left-0 right-0 z-20 flex items-center justify-center gap-3 px-4">
+        {/* Indicadores: Líneas Rectas */}
+        <div className="absolute bottom-6 left-0 right-0 z-20 flex items-center justify-center gap-3 px-4">
           {scrollSnaps.map((_, index) => (
             <button
               key={index}
               onClick={() => emblaApi?.scrollTo(index)}
-              className="relative h-1 flex-1 max-w-[60px] overflow-hidden bg-white/30 transition-all"
+              className="relative h-1 flex-1 max-w-[50px] overflow-hidden bg-white/30 transition-all"
             >
               <div
                 className={cn(
-                  "absolute inset-0 bg-white transition-transform duration-300",
+                  "absolute inset-0 bg-white transition-transform",
                   index === selectedIndex ? "translate-x-0" : "-translate-x-full"
                 )}
                 style={{
@@ -101,21 +110,13 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({
           ))}
         </div>
 
-        {/* Flechas Navegación */}
-          <CarouselPrevious
-            className={cn(
-              'hidden md:!flex !size-10 rounded-full bg-black/30 text-white border-none transition-opacity duration-200 pointer-events-none opacity-0',
-              'group-hover:opacity-100 group-hover:pointer-events-auto',
-              '!left-6 top-1/2 -translate-y-1/2',
-            )}
-          />
-          <CarouselNext
-            className={cn(
-              'hidden md:!flex !size-10 rounded-full bg-black/30 text-white border-none transition-opacity duration-200 pointer-events-none opacity-0',
-              'group-hover:opacity-100 group-hover:pointer-events-auto',
-              '!right-6 top-1/2 -translate-y-1/2',
-            )}
-          />
+        {/* Flechas Navegación (Solo en Desktop) */}
+        <CarouselPrevious
+          className="hidden md:flex !size-12 rounded-none bg-black/20 text-white border-none hover:bg-[#005ec2] transition-all !left-0 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100"
+        />
+        <CarouselNext
+          className="hidden md:flex !size-12 rounded-none bg-black/20 text-white border-none hover:bg-[#005ec2] transition-all !right-0 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100"
+        />
       </Carousel>
     </div>
   )

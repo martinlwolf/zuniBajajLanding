@@ -15,12 +15,14 @@ export const MOTO_DATA = {
     'dominar-d400-ug': {
         brand: 'Bajaj',
         model: 'Dominar',
-        version: 'D400 UG',
+        version: 'D400',
         images: [
             'https://i.ibb.co/mW59MS0/aae46895e143.webp',
             'https://i.ibb.co/Ps6xtR16/614a222bf256.webp',
         ],
         whatsappHref: buildWhatsappHref('Dominar D400 UG'),
+        pdfLink: '/files/100104_bajaj_dominar_400.pdf',
+        background: '/images/motos/background/Bajaj-Dominar-400-2025-1.webp',
         specSections: [
             {
                 title: 'Información General',
@@ -54,6 +56,8 @@ export const MOTO_DATA = {
             'https://i.ibb.co/SXttg09Z/12eefd6399b7.webp',
         ],
         whatsappHref: buildWhatsappHref('Dominar D250'),
+        pdfLink: '/files/100114_bajaj_dominar_250.pdf',
+        background: '/images/motos/background/After-slider-dominar-250.webp',
         specSections: [
             {
                 title: 'Información General',
@@ -90,6 +94,8 @@ export const MOTO_DATA = {
             'https://i.ibb.co/xqG6d3Jg/ca65f2119e4d.webp',
         ],
         whatsappHref: buildWhatsappHref('Rouser NS 400Z'),
+        pdfLink: '/files/100117_bajaj_rouser_ns_400z.pdf',
+        background: '/images/motos/background/bajaj-pulsar-ns-400-z-1.webp',
         specSections: [
             {
                 title: 'Información General',
@@ -124,6 +130,8 @@ export const MOTO_DATA = {
             'https://i.ibb.co/NdcC9VF2/1b9b0f56a33d.webp',
         ],
         whatsappHref: buildWhatsappHref('Rouser NS 200'),
+        pdfLink: '/files/100100_bajaj_rouser_200_ns.pdf',
+        background: '/images/motos/background/bajaj-200-8.webp',
         specSections: [
             {
                 title: 'Información General',
@@ -156,6 +164,8 @@ export const MOTO_DATA = {
             'https://i.ibb.co/DgWTB6GY/d4b1b488aa8c.webp',
         ],
         whatsappHref: buildWhatsappHref('Rouser NS 200 FI'),
+        pdfLink: '/files/100100_bajaj_rouser_200_ns.pdf',
+        background: '/images/motos/background/bajaj-200-8.webp',
         specSections: [
             {
                 title: 'Información General',
@@ -185,6 +195,8 @@ export const MOTO_DATA = {
         version: 'NS 160',
         images: ['https://i.ibb.co/0RtwjLs3/48a406fda5dd.webp'],
         whatsappHref: buildWhatsappHref('Rouser NS 160'),
+        pdfLink: '/files/100101_bajaj_rouser_160_ns.pdf',
+        background: '/images/motos/background/ns160_galeria_04.webp',
         specSections: [
             {
                 title: 'Información General',
@@ -219,6 +231,8 @@ export const MOTO_DATA = {
             'https://i.ibb.co/s90GY9Cb/cf74bc4c8fef.webp',
         ],
         whatsappHref: buildWhatsappHref('Rouser NS 125'),
+        pdfLink: '/files/100102_bajaj_rouser_125_ns.pdf',
+        background: '/images/motos/background/Bajaj-NS-125-Rouser-Pulsar-1.webp',
         specSections: [
             {
                 title: 'Información General',
@@ -252,6 +266,8 @@ export const MOTO_DATA = {
             'https://i.ibb.co/wNSYnf0T/7b66f0a89da8.webp',
         ],
         whatsappHref: buildWhatsappHref('Rouser N250'),
+        pdfLink: '/files/100115_bajaj_rouser_n_250.pdf',
+        background: '/images/motos/background/n250.webp',
         specSections: [
             {
                 title: 'Información General',
@@ -284,6 +300,8 @@ export const MOTO_DATA = {
             'https://i.ibb.co/HLJkrsyV/7461ef80ad90.webp',
         ],
         whatsappHref: buildWhatsappHref('Rouser P150'),
+        pdfLink: '/files/100116_bajaj_rouser_p150.pdf',
+        background: '/images/motos/background/FOTO4.webp',
         specSections: [
             {
                 title: 'Información General',
@@ -319,6 +337,8 @@ export const MOTO_DATA = {
             'https://i.ibb.co/JwjmkdhF/c95afe589de1.webp',
         ],
         whatsappHref: buildWhatsappHref('Boxer 150 AT'),
+        pdfLink: '/files/100113_bajaj_boxer_150_at_full.pdf',
+        background: '/images/motos/background/BOXER-150-4-5-04-1.webp',
         specSections: [
             {
                 title: 'Información General',
@@ -348,6 +368,8 @@ export const MOTO_DATA = {
         version: 'CT 100',
         images: [DEFAULT_IMAGE],
         whatsappHref: buildWhatsappHref('Boxer CT 100'),
+        pdfLink: '/files/BAJAJ_CT100-3.pdf',
+        background: '/images/motos/background/FOTO4.webp',
         specSections: [
             {
                 title: 'Información General',
