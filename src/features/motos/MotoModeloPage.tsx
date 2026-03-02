@@ -35,15 +35,6 @@ export type MotoModeloPageProps = {
   data: MotoModeloPageData
 }
 
-const SpecRow: React.FC<MotoSpec> = ({ label, value }) => (
-  <div className="flex items-center justify-between text-sm py-1 leading-[1.05]">
-    <span className="text-gray-600 leading-[1.05]">{label}:</span>
-    <span className="text-gray-900 font-medium ml-2 leading-[1.05]">
-      {value ?? 'N/A'}
-    </span>
-  </div>
-)
-
 const MotoModeloPage: React.FC<MotoModeloPageProps> = ({ data }) => {
   const images = (data.images ?? []).filter(Boolean)
   const [current, setCurrent] = React.useState(0)

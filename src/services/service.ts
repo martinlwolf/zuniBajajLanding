@@ -9,6 +9,9 @@ export type ContactPayload = {
   dni: string
   telefono: string
   localidad: string
+  origen?: 'home' | 'financiacion' | 'service-oficial' | 'eventos' | string
+  modelo?: string
+  mensaje?: string
 }
 
 export function postContacto(payload: ContactPayload) {

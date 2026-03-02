@@ -19,7 +19,7 @@ const FinanciacionPage: React.FC = () => {
 
           <div className="w-full flex justify-center">
             <div className="max-h-[75vh] overflow-auto">
-              <ServiceForm title="COMUNICATE CON NOSOTROS" />
+              <ServiceForm title="COMUNICATE CON NOSOTROS" origen="financiacion" />
             </div>
           </div>
         </div>

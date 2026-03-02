@@ -20,6 +20,7 @@ const EventosForm: React.FC = () => {
         dni: '',
         telefono,
         localidad: '',
+        origen: 'eventos',
       });
       setSuccess(true);
       setNombre('');

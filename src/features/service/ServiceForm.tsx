@@ -4,10 +4,11 @@ import { postContacto } from '../../services/service';
 
 type ServiceFormProps = {
   title?: string;
+  origen?: 'financiacion' | 'service-oficial' | string;
 };
 
-const ServiceForm: React.FC<ServiceFormProps> = ({ title = 'SOLICITAR TURNO' }) => {
-  const [nombre, setNombre] = useState('');
+const ServiceForm: React.FC<ServiceFormProps> = ({ title = 'SOLICITAR TURNO', origen = 'service-oficial' }) => {
+  const [nombreCompleto, setNombreCompleto] = useState('');
   const [telefono, setTelefono] = useState('');
   const [dni, setDni] = useState('');
   const [localidad, setLocalidad] = useState('');
@@ -22,15 +23,22 @@ const ServiceForm: React.FC<ServiceFormProps> = ({ title = 'SOLICITAR TURNO' }) 
     setError('');
     setSuccess(false);
     try {
+      const trimmed = nombreCompleto.trim();
+      const parts = trimmed.split(/\s+/).filter(Boolean);
+      const nombre = parts[0] ?? '';
+      const apellido = parts.slice(1).join(' ');
+
       await postContacto({
         nombre,
-        apellido: '',
+        apellido,
         dni,
         telefono,
         localidad,
+        modelo,
+        origen,
       });
       setSuccess(true);
-      setNombre('');
+      setNombreCompleto('');
       setTelefono('');
       setDni('');
       setLocalidad('');
@@ -49,8 +57,8 @@ const ServiceForm: React.FC<ServiceFormProps> = ({ title = 'SOLICITAR TURNO' }) 
         className="px-3 py-2 xs:px-4 xs:py-3 sm:px-5 sm:py-4 text-base xs:text-lg rounded-lg border border-gray-300 focus:outline-none focus:ring-2 focus:ring-[#00aaff] transition"
         type="text"
         placeholder="Nombre y Apellido"
-        value={nombre}
-        onChange={e => setNombre(e.target.value)}
+        value={nombreCompleto}
+        onChange={e => setNombreCompleto(e.target.value)}
         required
       />
       <input

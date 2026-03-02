@@ -69,14 +69,22 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({
                 {/* Desktop image (shown on md and up) - fluid */}
                 <img
                   src={slide.imageDesktop}
-                  alt={slide.title}
+                  alt={
+                    slide.title?.trim()
+                      ? slide.title
+                      : `Bajaj Motozuni - Motos Bajaj y Financiación (slide ${idx + 1})`
+                  }
                   loading="eager"
                   className="hidden md:block w-full h-auto object-center"
                 />
                 {/* Mobile image (shown on small screens) - fluid */}
                 <img
                   src={slide.imageMobile}
-                  alt={slide.title}
+                  alt={
+                    slide.title?.trim()
+                      ? slide.title
+                      : `Bajaj Motozuni - Motos Bajaj y Financiación (slide ${idx + 1})`
+                  }
                   loading="eager"
                   className="block md:hidden w-full h-auto object-center"
                 />
@@ -94,6 +102,9 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({
             <button
               key={index}
               onClick={() => emblaApi?.scrollTo(index)}
+              type="button"
+              aria-label={`Ver slide ${index + 1}`}
+              aria-current={index === selectedIndex ? 'true' : undefined}
               className="relative h-1 flex-1 max-w-[50px] overflow-hidden bg-white/30 transition-all"
             >
               <div
@@ -112,9 +123,11 @@ export const HeroSlider: React.FC<HeroSliderProps> = ({
 
         {/* Flechas Navegación (Solo en Desktop) */}
         <CarouselPrevious
+          aria-label="Slide anterior"
           className="hidden md:flex !size-12 rounded-none bg-black/20 text-white border-none hover:bg-[#005ec2] transition-all !left-0 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100"
         />
         <CarouselNext
+          aria-label="Slide siguiente"
           className="hidden md:flex !size-12 rounded-none bg-black/20 text-white border-none hover:bg-[#005ec2] transition-all !right-0 top-1/2 -translate-y-1/2 opacity-0 group-hover:opacity-100"
         />
       </Carousel>
