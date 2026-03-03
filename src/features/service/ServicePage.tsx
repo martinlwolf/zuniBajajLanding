@@ -21,7 +21,7 @@ const ServicePage: React.FC = () => {
         </div>
         {/* Abajo en mobile: Formulario grande */}
         <div className="flex flex-col justify-center items-center md:items-end w-full max-w-[90vw] xs:max-w-[320px] sm:max-w-[360px] md:max-w-[600px]">
-          <ServiceForm />
+          <ServiceForm buttonText="SOLICITAR TURNO" />
         </div>
       </div>
     </div>

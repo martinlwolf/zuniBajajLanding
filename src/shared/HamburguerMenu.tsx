@@ -1,10 +1,11 @@
 import { useState } from 'react'
-import { useNavigate } from 'react-router-dom'
+import { useNavigate, useLocation } from 'react-router-dom'
 
 const HamburguerMenu = () => {
   const [open, setOpen] = useState(false)
 
   const navigate = useNavigate()
+  const location = useLocation()
 
   const toggleMenu = () => {
     setOpen((prev) => !prev)
@@ -13,6 +14,20 @@ const HamburguerMenu = () => {
   const handleNavigate = (to: string) => {
     setOpen(false)
     navigate(to)
+  }
+
+  const handleContact = () => {
+    setOpen(false)
+    if (location.pathname === '/') {
+      const el = document.getElementById('contacto')
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      return
+    }
+    navigate('/')
+    setTimeout(() => {
+      const el = document.getElementById('contacto')
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }, 150)
   }
 
   return (
@@ -96,7 +111,7 @@ const HamburguerMenu = () => {
             {/* CONTACTO destacado */}
             <button
               type="button"
-              onClick={() => handleNavigate('/#contacto')}
+              onClick={handleContact}
               className="m-4 mt-3 bg-white text-[#005ec2] px-4 py-3 text-base font-bold uppercase shadow-md hover:shadow-lg hover:bg-gray-100 transition-colors w-auto text-center"
             >
               CONTACTO

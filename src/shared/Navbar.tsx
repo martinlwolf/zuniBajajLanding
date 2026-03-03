@@ -1,7 +1,22 @@
-import { Link } from 'react-router-dom'
+import { Link, useNavigate, useLocation } from 'react-router-dom'
 import HamburguerMenu from './HamburguerMenu'
 
 const Navbar = () => {
+  const navigate = useNavigate()
+  const location = useLocation()
+
+  const handleContact = () => {
+    if (location.pathname === '/') {
+      const el = document.getElementById('contacto')
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+      return
+    }
+    navigate('/')
+    setTimeout(() => {
+      const el = document.getElementById('contacto')
+      if (el) el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+    }, 150)
+  }
   const navLinkClass =
     "relative flex-1 flex items-center justify-center uppercase text-white hover:bg-[#004ba1] transition-all text-base lg:text-lg font-semibold after:content-[''] after:absolute after:left-3 after:right-3 after:bottom-2 after:h-[2px] after:bg-[#e30613] after:scale-x-0 after:origin-right hover:after:origin-left hover:after:scale-x-100 after:transition-transform after:duration-300"
 
@@ -77,12 +92,13 @@ const Navbar = () => {
 
           {/* CONTACTO: Al final y destacado */}
           <div className="flex items-center ml-4">
-            <Link
-              to="/contacto"
+            <button
+              type="button"
+              onClick={handleContact}
               className="px-5 lg:px-7 py-2.5 bg-white text-[#005ec2] uppercase font-bold shadow-md hover:shadow-lg hover:bg-gray-100 transition-all whitespace-nowrap text-sm lg:text-base"
             >
               CONTACTO
-            </Link>
+            </button>
           </div>
 
         </div>
