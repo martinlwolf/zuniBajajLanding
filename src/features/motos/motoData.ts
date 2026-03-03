@@ -1,7 +1,7 @@
 import type { MotoModeloPageData } from './MotoModeloPage'
 
-const DEFAULT_IMAGE =
-    "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='480'%3E%3Crect width='100%25' height='100%25' fill='%23e5e7eb'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%236b7280' font-size='20' font-family='Arial'%3EImagen%3C/text%3E%3C/svg%3E"
+//const DEFAULT_IMAGE =
+//    "data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='640' height='480'%3E%3Crect width='100%25' height='100%25' fill='%23e5e7eb'/%3E%3Ctext x='50%25' y='50%25' dominant-baseline='middle' text-anchor='middle' fill='%236b7280' font-size='20' font-family='Arial'%3EImagen%3C/text%3E%3C/svg%3E"
 
 const WHATSAPP_NUMBER_PLACEHOLDER = '5490000000000'
 
